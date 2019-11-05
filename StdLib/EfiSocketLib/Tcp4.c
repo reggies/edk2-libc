@@ -1733,6 +1733,7 @@ EslTcp4RemoteAddressSet (
 
 **/
 VOID
+EFIAPI
 EslTcp4RxComplete (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
@@ -2122,6 +2123,7 @@ EslTcp4TxBuffer (
 
 **/
 VOID
+EFIAPI
 EslTcp4TxComplete (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
@@ -2179,6 +2181,7 @@ EslTcp4TxComplete (
 
 **/
 VOID
+EFIAPI
 EslTcp4TxOobComplete (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo

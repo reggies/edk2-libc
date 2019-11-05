@@ -591,7 +591,7 @@ EFI_STATUS
 **/
 typedef
 VOID
-(* PFN_API_IO_COMPLETE) (
+(EFIAPI * PFN_API_IO_COMPLETE) (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
   );
@@ -909,7 +909,7 @@ EFI_STATUS
 **/
 typedef
 VOID
-(* PFN_API_TX_COMPLETE) (
+(EFIAPI * PFN_API_TX_COMPLETE) (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
   );

@@ -485,6 +485,7 @@ EslUdp4RemoteAddressSet (
 
 **/
 VOID
+EFIAPI
 EslUdp4RxComplete (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
@@ -970,6 +971,7 @@ EslUdp4TxBuffer (
 
 **/
 VOID
+EFIAPI
 EslUdp4TxComplete (
   IN EFI_EVENT Event,
   IN ESL_IO_MGMT * pIo
