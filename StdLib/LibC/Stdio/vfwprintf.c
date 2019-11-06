@@ -769,7 +769,7 @@ WDECL(__vf,printf_unlocked)(FILE *fp, const CHAR_T *fmt0, va_list ap)
   ((u_long)(flags&LONGINT ? GETARG(u_long) : \
       flags&SHORTINT ? (u_long)(u_short)GETARG(int) : \
       flags&CHARINT ? (u_long)(u_char)GETARG(int) : \
-      (u_long)GETARG(u_int)))
+      (u_long)GETARG(unsigned int)))
 
 #define INTMAX_SIZE (INTMAXT|SIZET|PTRDIFFT|LLONGINT)
 

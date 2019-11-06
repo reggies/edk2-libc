@@ -109,7 +109,7 @@ __weak_alias(vsnprintf_ss,_vsnprintf_ss)
       flags&QUADINT ? va_arg(ap, u_quad_t) : \
       flags&LONGINT ? va_arg(ap, unsigned long) : \
       flags&SHORTINT ? (u_short)va_arg(ap, int) : \
-      va_arg(ap, u_int)))
+      va_arg(ap, unsigned int)))
 
 #define PUTCHAR(C) do {         \
   if (sbuf < tailp)       \
