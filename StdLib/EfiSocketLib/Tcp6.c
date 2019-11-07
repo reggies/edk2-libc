@@ -69,6 +69,7 @@ EslTcp6ConnectStart (
 
 **/
 VOID
+EFIAPI
 EslTcp6ListenComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort
@@ -180,6 +181,7 @@ EslTcp6Accept (
 
 **/
 VOID
+EFIAPI
 EslTcp6ConnectComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort
@@ -857,6 +859,7 @@ EslTcp6Listen (
 
 **/
 VOID
+EFIAPI
 EslTcp6ListenComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort

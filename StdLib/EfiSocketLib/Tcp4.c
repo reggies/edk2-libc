@@ -69,6 +69,7 @@ EslTcp4ConnectStart (
 
 **/
 VOID
+EFIAPI
 EslTcp4ListenComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort
@@ -186,6 +187,7 @@ EslTcp4Accept (
 
 **/
 VOID
+EFIAPI
 EslTcp4ConnectComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort
@@ -826,6 +828,7 @@ EslTcp4Listen (
 
 **/
 VOID
+EFIAPI
 EslTcp4ListenComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort

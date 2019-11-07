@@ -1434,6 +1434,7 @@ EslSocketPortClose (
 
 **/
 VOID
+EFIAPI
 EslSocketPortCloseComplete (
   IN EFI_EVENT Event,
   IN ESL_PORT * pPort
