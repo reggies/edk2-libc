@@ -2829,6 +2829,11 @@ EslSocketOptionGet (
         Status = EFI_INVALID_PARAMETER;
         break;
 
+      case SO_ERROR:
+        pOptionData = (CONST UINT8 *)&pSocket->errno;
+        LengthInBytes = sizeof (pSocket->errno);
+        break;
+
       case SO_ACCEPTCONN:
         //
         //  Return the listen flag
@@ -2920,6 +2925,10 @@ EslSocketOptionGet (
       //  Return the value
       //
       CopyMem ( pOptionValue, pOptionData, LengthInBytes );
+
+      if (OptionName == SO_ERROR) {
+        pSocket->errno = 0;
+      }
 
       //
       //  Zero fill any remaining space
