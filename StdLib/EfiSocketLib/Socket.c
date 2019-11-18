@@ -5244,9 +5244,11 @@ EslSocketShutdown (
             //
             //  Walk the list of active receive operations
             //
-            pIo = pPort->pRxActive;
-            while ( NULL != pIo ) {
-              EslSocketRxCancel ( pPort, pIo );
+            if ( NULL != pPort->pfnRxCancel ) {
+              pIo = pPort->pRxActive;
+              while ( NULL != pIo ) {
+                EslSocketRxCancel ( pPort, pIo );
+              }
             }
 
             //
