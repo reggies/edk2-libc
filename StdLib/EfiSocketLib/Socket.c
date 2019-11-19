@@ -1632,6 +1632,24 @@ EslSocketConnect (
       //  Validate the socket state
       //
       switch ( pSocket->State ) {
+      case SOCKET_STATE_CLOSED:
+        //
+        // Maybe, the connection was closed/reset in the meantime
+        //
+        if (pSocket->ConnectStatus == EFI_CONNECTION_RESET) {
+          pSocket->errno = ECONNRESET;
+          Status = EFI_DEVICE_ERROR;
+          break;
+        }
+        else if (pSocket->ConnectStatus == EFI_CONNECTION_REFUSED) {
+          pSocket->errno = ECONNREFUSED;
+          Status = EFI_DEVICE_ERROR;
+          break;
+        }
+        //
+        // Otherwise it is just a wrong socket state. Fallthrough
+        //
+
       default:
         //
         //  Wrong socket state
