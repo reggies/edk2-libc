@@ -64,7 +64,10 @@ main (
                               NULL,
                               &pAddrInfo );
     if ( 0 != AppStatus ) {
-      printf ( "ERROR - address info not found, errno: %d\r\n", AppStatus );
+      printf ( "ERROR - address info not found, error: %d\r\n", AppStatus );
+      if ( AppStatus == EAI_SYSTEM ) {
+        printf ( "        errno: %d\r\n", errno );
+      }
     }
     if ( NULL == pAddrInfo ) {
       printf ( "ERROR - No address info structure allocated\r\n" );
